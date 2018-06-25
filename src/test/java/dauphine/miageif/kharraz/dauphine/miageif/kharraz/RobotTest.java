@@ -5,13 +5,14 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
-@RunWith(Cucumber.class)
+
 public class RobotTest {
 
 	
-	/*
+	
 	@Test
 	public void testSeCharger() {
 		
@@ -38,6 +39,6 @@ public class RobotTest {
 		adam.setEnergyPercentage(10);
 		String fail = "J'ai besoin de se charger";
 		assertEquals(fail, adam.sePresenter());
-	}*/
+	}
 	
 }

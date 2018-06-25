@@ -6,6 +6,12 @@ public class Robot {
 	private int handsNumber;
 	private String name;
 	
+	private Position position;
+	
+	public void seDeplacer(Position newPosition) {
+		this.position = newPosition;
+	}
+	
 	public String sePresenter() {
 		if(this.energyPercentage >= 25)
 			return "Bonjour, je suis " +  this.name +
@@ -19,7 +25,7 @@ public class Robot {
 	public boolean seCharger(int power) {
 		if(this.energyPercentage == 100) {
 			System.err.println("Je suis en pleine forme");
-			return false;
+			return true;
 		}
 			
 		else {
@@ -34,13 +40,22 @@ public class Robot {
 		this.energyPercentage = 0;
 		this.handsNumber = 0;
 		this.name = "Inconnu";
+		this.position = new Position(0, 0);
 	}
 	
+	public Robot(int energyPercentage, int handsNumber, String name, Position position) {
+		super();
+		this.energyPercentage = energyPercentage;
+		this.handsNumber = handsNumber;
+		this.name = name;
+		this.position = position;
+	}
 	public Robot(int energyPercentage, int handsNumber, String name) {
 		super();
 		this.energyPercentage = energyPercentage;
 		this.handsNumber = handsNumber;
 		this.name = name;
+		this.position = new Position(0, 0);
 	}
 
 	public int getEnergyPercentage() {
@@ -58,4 +73,23 @@ public class Robot {
 	public void setHandsNumber(int handsNumber) {
 		this.handsNumber = handsNumber;
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Position getPosition() {
+		return position;
+	}
+
+	public void setPosition(Position position) {
+		this.position = position;
+	}
+	
+	
+	
 }
